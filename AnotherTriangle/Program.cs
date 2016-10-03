@@ -9,21 +9,9 @@ namespace AnotherTriangle
             Console.WriteLine("Enter N:");
             int n = int.Parse(Console.ReadLine());
 
-            for (int row = 0; row < n; row++)
+            for (int i = 0; i < n; i++)
             {
-                int spaces = 0;
-                while (spaces < n-row-1)
-                {
-                    Console.Write(' ');
-                    spaces++;
-                }
-                int asterisks = 0;
-                while (asterisks < row*2+1)
-                {
-                    Console.Write('*');
-                    asterisks++;
-                }
-                Console.WriteLine();
+                Console.WriteLine("{0,"+(n+i)+"}", new string('*', 2*i + 1));
             }
         }
     }

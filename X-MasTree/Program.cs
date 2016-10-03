@@ -16,25 +16,9 @@ namespace X_MasTree
 
             for (int tree = 1; tree <= n; tree++)
             {
-                for (int row = 0; row <= n; row++)
+                for (int i = 0; i < tree; i++)
                 {
-                    int spaces = 0;
-                    while (spaces < n - row)
-                    {
-                        Console.Write(' ');
-                        spaces++;
-                    }
-
-                    int asterisks = 0;
-                    while (asterisks < row * 2 + 1)
-                    {
-                        Console.Write('*');
-                        asterisks++;
-                    }
-
-                    Console.WriteLine();
-                    if (asterisks == tree * 2 + 1)
-                        break;
+                    Console.WriteLine("{0," + (tree + i) + "}", new string('*', 2 * i + 1));
                 }
             }
         }

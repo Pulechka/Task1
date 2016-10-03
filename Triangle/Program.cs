@@ -9,15 +9,9 @@ namespace Triangle
             Console.WriteLine("Enter N:");
             int n = int.Parse(Console.ReadLine());
 
-            for (int row = 1; row <= n; row++)
+            for (int i = 1; i <= n; i++)
             {
-                int asterisks = 0;
-                while (asterisks < row)
-                {
-                    Console.Write("*");
-                    asterisks++;
-                }
-                Console.WriteLine();
+                Console.WriteLine(new string('*',i));
             }
         }
     }
