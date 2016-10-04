@@ -13,21 +13,17 @@ namespace CharDoubler
             Console.Write("Введите вторую строку: ");
             string secondString = Console.ReadLine();
 
-            //StringBuilder strBuilder = new StringBuilder();
-            //foreach (var ch in secondString)
-            //{
-            //    if (!strBuilder.ToString().Contains(ch.ToString()))
-            //        strBuilder.Append(ch);
-            //}
-
             char[] charsForDouble = secondString.Distinct().ToArray();
 
-            foreach (var ch in charsForDouble.ToString())
+            StringBuilder sb = new StringBuilder(firstString);      
+            
+            foreach (var ch in charsForDouble)
             {
-                firstString = firstString.Replace(ch.ToString(), string.Format("{0}{1}",ch,ch));       
+                //firstString = firstString.Replace(ch.ToString(), string.Format("{0}{1}",ch,ch));   
+                sb.Replace(ch.ToString(), string.Format("{0}{1}", ch, ch));
             }
             
-            Console.WriteLine("Результирующая строка: "+ firstString);
+            Console.WriteLine("Результирующая строка: "+ sb);
         }
     }
 }

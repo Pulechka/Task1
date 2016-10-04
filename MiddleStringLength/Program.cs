@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MiddleStringLength
 {
@@ -6,24 +8,30 @@ namespace MiddleStringLength
     {
         static void Main(string[] args)
         {
-            string str = "Написать программу, которая определяет среднюю длину слова во введённой текстовой строке. " +
-                        "Учесть, что символы пунктуации на длину слов влиять не должны.Регулярные выражения не " +
+            string str = "Написать программу, которая @определяет среднюю длину слова во введённой текстовой строке. " +
+                        "Учесть, что символы пунктуации на длину! слов влиять не должны.Регулярные выражения не " +
                         "использовать. И не пытайтесь прописать все ручками. Используйте стандартные методы класса String.";
 
-            string[] wordsInStr = str.Split(new char[] { ' ', ',', '.', ':', ';', '?', '!' }, StringSplitOptions.RemoveEmptyEntries);
+            HashSet<char> separators = new HashSet<char>();
 
-            int wordsCount = 0;
+            foreach (var ch in str)
+            {
+                if (char.IsSeparator(ch) || char.IsPunctuation(ch))
+                        separators.Add(ch);
+            }
+
+            string[] wordsInStr = str.Split(separators.ToArray(), StringSplitOptions.RemoveEmptyEntries);
+
             int wordsSummaryLength = 0;
             foreach (var word in wordsInStr)
             {
-                wordsCount++;
                 wordsSummaryLength += word.Length;
             }
 
             Console.WriteLine("String:");
             Console.WriteLine(str);
             Console.WriteLine();
-            Console.WriteLine("Middle string length = " + Math.Round((double)wordsSummaryLength / wordsCount, 0));
+            Console.WriteLine("Middle string length = " + Math.Round((double)wordsSummaryLength / wordsInStr.Length, 0));
         }
     }
 }
