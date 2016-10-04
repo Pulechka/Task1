@@ -26,19 +26,15 @@ namespace FontAdjustment
                 switch (newStyle)
                 {
                     case 1:
-                        currentStyle = currentStyle.HasFlag(FontStyle.Bold) ? 
-                            currentStyle -= (int)FontStyle.Bold : currentStyle |= FontStyle.Bold;
+                        currentStyle ^= FontStyle.Bold;
                         break;
                     case 2:
-                        currentStyle = currentStyle.HasFlag(FontStyle.Italic) ? 
-                            currentStyle -= (int)FontStyle.Italic : currentStyle |= FontStyle.Italic;
+                        currentStyle ^= FontStyle.Italic;
                         break;
                     case 3:
-                        currentStyle = currentStyle.HasFlag(FontStyle.Underline) ? 
-                            currentStyle -= (int)FontStyle.Underline : currentStyle |= FontStyle.Underline;
+                        currentStyle ^= FontStyle.Underline;
                         break;
-                }
-                
+                }               
             }
         }
     }
