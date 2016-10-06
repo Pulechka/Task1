@@ -19,7 +19,6 @@ namespace CharDoubler
             
             foreach (var ch in charsForDouble)
             {
-                //firstString = firstString.Replace(ch.ToString(), string.Format("{0}{1}",ch,ch));   
                 sb.Replace(ch.ToString(), string.Format("{0}{1}", ch, ch));
             }
             
