@@ -10,14 +10,14 @@ namespace MiddleStringLength
         {
             string str = "Написать программу, которая @определяет среднюю длину слова во введённой текстовой строке. " +
                         "Учесть, что символы пунктуации на длину! слов влиять не должны.Регулярные выражения не " +
-                        "использовать. И не пытайтесь прописать все ручками. Используйте стандартные методы класса String.";
+                        "использовать. И не пытайтесь прописать все ручками. Используйте стандартные методы класса String. 5-ый, 12:00";
 
             HashSet<char> separators = new HashSet<char>();
 
             foreach (var ch in str)
             {
                 if (char.IsSeparator(ch) || char.IsPunctuation(ch))
-                        separators.Add(ch);
+                    separators.Add(ch);
             }
 
             string[] wordsInStr = str.Split(separators.ToArray(), StringSplitOptions.RemoveEmptyEntries);
