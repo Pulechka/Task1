@@ -8,7 +8,7 @@ namespace MiddleStringLength
     {
         static void Main(string[] args)
         {
-            string str = "Написать программу, которая @определяет среднюю длину слова во введённой текстовой строке. " +
+            string str = "Написать программу, которая определяет среднюю длину слова во введённой текстовой строке. " +
                         "Учесть, что символы пунктуации на длину! слов влиять не должны.Регулярные выражения не " +
                         "использовать. И не пытайтесь прописать все ручками. Используйте стандартные методы класса String.";
 
@@ -22,16 +22,13 @@ namespace MiddleStringLength
 
             string[] wordsInStr = str.Split(separators.ToArray(), StringSplitOptions.RemoveEmptyEntries);
 
-            int wordsSummaryLength = 0;
-            foreach (var word in wordsInStr)
-            {
-                wordsSummaryLength += word.Length;
-            }
+            double middleWordsLength = wordsInStr.Select(w => w.Length)
+                                                .Average();
 
             Console.WriteLine("String:");
             Console.WriteLine(str);
             Console.WriteLine();
-            Console.WriteLine("Middle string length = " + Math.Round((double)wordsSummaryLength / wordsInStr.Length, 0));
+            Console.WriteLine($"Middle string length = {middleWordsLength:#.}");
         }
     }
 }
