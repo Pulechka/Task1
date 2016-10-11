@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace NonNegativeSum
 {
@@ -30,7 +31,7 @@ namespace NonNegativeSum
             Console.WriteLine();
         }
 
-        static int GetNonNegativeSum(int[] arr)
+        static int GetNonNegativeSum(int[] arr) //=> arr.Where(x => x > 0).Sum();
         {
             int sum = 0;
             foreach (var num in arr)

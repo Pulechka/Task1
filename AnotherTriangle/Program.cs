@@ -7,14 +7,20 @@ namespace AnotherTriangle
     {
         static void Main(string[] args)
         {
+            int n = GetN();
+            PrintTriangle(n);
+        }
+
+
+        static int GetN()
+        {
             Console.WriteLine("Enter N:");
-            int n = int.Parse(Console.ReadLine());
+            return int.Parse(Console.ReadLine());
+        }
 
-            /*for (int i = 0; i < n; i++)
-            {
-                Console.WriteLine("{0,"+(n+i)+"}", new string('*', 2*i + 1));
-            }*/
 
+        static void PrintTriangle(int n)
+        {
             StringBuilder sb = new StringBuilder();
             sb.Append('*');
             for (int i = 0; i < n; i++)
